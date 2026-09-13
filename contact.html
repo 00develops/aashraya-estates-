@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contact | Aashray Estates</title>
+    <meta
+      name="description"
+      content="Aashray Estates — Beyond Property, A Sense of Belonging."
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #071426;
+        --navy2: #0d1d35;
+        --gold: #c49a43;
+        --cream: #f5f1e9;
+        --text: #172033;
+        --muted: #697386;
+        --white: #fff;
+        --line: #ded8ca;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.65;
+      }
+      .navbar {
+        background: rgba(7, 20, 38, 0.96) !important;
+      }
+      .navbar-brand {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .navbar-brand img {
+        object-fit: contain;
+        background: #fff;
+        border-radius: 3px;
+      }
+      .navbar-brand small {
+        display: block;
+        font-size: 8px;
+        letter-spacing: 3px;
+        text-align: center;
+        color: var(--gold);
+      }
+      .nav-link {
+        color: #fff !important;
+        opacity: 0.82;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        opacity: 1;
+        color: #d3ab5b !important;
+      }
+      .btn-gold {
+        background: var(--gold);
+        border: 1px solid var(--gold);
+        color: #111;
+        font-weight: 700;
+        padding: 0.8rem 1.4rem;
+      }
+      .btn-gold:hover {
+        background: #d5ad5b;
+        border-color: #d5ad5b;
+        color: #111;
+      }
+      .hero {
+        min-height: 100vh;
+        background: url("hero.png") center/cover no-repeat;
+        position: relative;
+        color: #fff;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(3, 10, 20, 0.88),
+          rgba(3, 10, 20, 0.38),
+          rgba(3, 10, 20, 0.2)
+        );
+      }
+      .hero .container {
+        position: relative;
+        z-index: 2;
+      }
+      .hero h1 {
+        font-size: clamp(3rem, 7vw, 6.5rem);
+        line-height: 0.98;
+        font-weight: 700;
+        letter-spacing: -3px;
+        max-width: 850px;
+      }
+      .hero h1 em {
+        font-family: Georgia, serif;
+        font-weight: 400;
+        color: #d5ae5d;
+      }
+      .eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+      .gold-text {
+        color: var(--gold);
+      }
+      .hero-copy {
+        font-size: 1.15rem;
+        max-width: 600px;
+        color: #e5e7eb;
+        margin: 1.5rem 0 2rem;
+      }
+      .stats-strip {
+        background: var(--navy);
+        color: #fff;
+      }
+      .stat {
+        padding: 28px 20px;
+        text-align: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.13);
+      }
+      .stat:last-child {
+        border: 0;
+      }
+      .stat strong {
+        display: block;
+        color: var(--gold);
+        font-size: 2.2rem;
+      }
+      .stat span {
+        font-size: 0.8rem;
+        color: #c7ced9;
+      }
+      .section-pad {
+        padding: 100px 0;
+      }
+      .section-intro {
+        max-width: 720px;
+      }
+      .section-pad h2,
+      .dark-section h2,
+      .cta-band h2 {
+        font-size: clamp(2.1rem, 4vw, 4rem);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .lead-copy {
+        font-size: 1.15rem;
+        color: #d8dee7;
+      }
+      .feature-card {
+        height: 100%;
+        padding: 35px;
+        border: 1px solid var(--line);
+        transition: 0.3s;
+        background: #fff;
+      }
+      .feature-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(10, 20, 30, 0.1);
+      }
+      .feature-card i {
+        font-size: 2rem;
+        color: var(--gold);
+      }
+      .feature-card h3 {
+        margin: 20px 0 10px;
+        font-size: 1.25rem;
+      }
+      .dark-section {
+        background: var(--navy);
+        color: #fff;
+      }
+      .dark-section .muted {
+        color: #aeb8c8;
+      }
+      .muted-light {
+        color: #bac3d0;
+      }
+      .project-facts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 30px;
+      }
+      .project-facts div {
+        border-left: 2px solid var(--gold);
+        padding: 8px 12px;
+      }
+      .project-facts strong {
+        display: block;
+        font-size: 1.35rem;
+        color: #fff;
+      }
+      .project-facts span {
+        font-size: 0.72rem;
+        color: #9faabd;
+      }
+      .project-card {
+        display: block;
+        position: relative;
+        height: 430px;
+        overflow: hidden;
+        border-radius: 4px;
+        color: #fff;
+        text-decoration: none;
+        background: #111;
+      }
+      .project-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: 0.5s;
+      }
+      .project-card:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.86));
+      }
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+      .project-card div {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        padding: 25px;
+      }
+      .project-card span,
+      .status {
+        font-size: 0.68rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .project-card h3 {
+        margin: 7px 0 0;
+        font-size: 1.5rem;
+      }
+      .project-card p {
+        margin: 0;
+        color: #ddd;
+        font-size: 0.9rem;
+      }
+      .text-link {
+        color: var(--gold);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .cta-band {
+        padding: 85px 0;
+        background: var(--cream);
+      }
+      .footer {
+        background: #050d19;
+        color: #adb6c4;
+        padding: 70px 0 20px;
+      }
+      .footer-logo {
+        width: 55px;
+        background: #fff;
+        border-radius: 4px;
+      }
+      .footer h6 {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.75rem;
+      }
+      .footer a {
+        display: block;
+        color: #adb6c4;
+        text-decoration: none;
+        margin: 8px 0;
+      }
+      .footer a:hover {
+        color: var(--gold);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        margin-top: 45px;
+        padding-top: 20px;
+        font-size: 0.8rem;
+      }
+      .page-hero {
+        padding: 170px 0 100px;
+        background: var(--navy);
+        color: #fff;
+      }
+      .page-hero h1 {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 1;
+      }
+      .page-hero p:not(.eyebrow) {
+        max-width: 650px;
+        color: #bac3d0;
+        font-size: 1.1rem;
+      }
+      .property-image {
+        height: 430px;
+        overflow: hidden;
+        border-radius: 5px;
+      }
+      .property-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .property-content {
+        padding: 25px 0;
+      }
+      .property-content h2 {
+        font-size: 2.2rem;
+        margin: 10px 0;
+      }
+      .property-content ul {
+        padding-left: 20px;
+        color: var(--muted);
+      }
+      .status {
+        display: inline-block;
+        border: 1px solid rgba(196, 154, 67, 0.55);
+        padding: 5px 10px;
+      }
+      .property-feature img {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+      .vision-box {
+        padding: 45px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        height: 100%;
+      }
+      .vision-box.light {
+        background: var(--gold);
+        color: #111;
+        border-color: var(--gold);
+      }
+      .vision-box.light .eyebrow {
+        color: #111;
+      }
+      .focus-card {
+        height: 100%;
+        border-top: 2px solid var(--gold);
+        padding: 30px;
+        background: #f8f6f0;
+      }
+      .focus-card span {
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .focus-card h3 {
+        font-size: 1.25rem;
+        margin: 15px 0 8px;
+      }
+      .contact-item {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-top: 30px;
+      }
+      .contact-item i {
+        color: var(--gold);
+        font-size: 1.5rem;
+      }
+      .contact-item small {
+        display: block;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .contact-item strong {
+        display: block;
+      }
+      .contact-form {
+        background: #f8f6f0;
+        padding: 40px;
+      }
+      .contact-form label {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 7px;
+      }
+      .form-control,
+      .form-select {
+        border: 1px solid #d8d2c5;
+        border-radius: 0;
+        padding: 13px;
+        background: #fff;
+      }
+      .form-control:focus,
+      .form-select:focus {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 0.15rem rgba(196, 154, 67, 0.15);
+      }
+      @media (max-width: 767px) {
+        .section-pad {
+          padding: 70px 0;
+        }
+        .hero h1 {
+          letter-spacing: -1px;
+        }
+        .project-facts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stat {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        }
+        .property-image,
+        .project-card {
+          height: 330px;
+        }
+        .property-feature img {
+          height: 350px;
+        }
+        .contact-form {
+          padding: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a
+          class="navbar-brand d-flex align-items-center gap-2"
+          href="index.html"
+          ><img
+            src="logo.png"
+            width="48"
+            height="48"
+            alt="Aashray Estates"
+          /><span>Aashray<small>ESTATES</small></span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="properties.html">Properties</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="team.html">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-gold" href="contact.html">Enquire Now</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow gold-text">GET IN TOUCH</p>
+        <h1>Let's build belonging.</h1>
+        <p>
+          Tell us what you're looking for and the Aashray team can connect with
+          you.
+        </p>
+      </div>
+    </section>
+    <section class="section-pad" id="form">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <p class="eyebrow gold-text">CONTACT Aashray ESTATES</p>
+            <h2>Start a conversation.</h2>
+            <p class="muted">
+              Tell us about your property requirements and the type of project
+              you're interested in.
+            </p>
+            <div class="contact-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <small>Location</small><strong>Lucknow, Uttar Pradesh</strong>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i class="bi bi-building"></i>
+              <div><small>Company</small><strong>Aashray Estates</strong></div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <form class="contact-form" onsubmit="return submitEnquiry(event);">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label>Full Name</label
+                  ><input
+                    id="name"
+                    class="form-control"
+                    required
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label>Phone Number</label
+                  ><input
+                    id="phone"
+                    type="tel"
+                    class="form-control"
+                    required
+                    placeholder="Your phone"
+                  />
+                </div>
+                <div class="col-12">
+                  <label>Email Address</label
+                  ><input
+                    id="email"
+                    type="email"
+                    class="form-control"
+                    required
+                    placeholder="you@example.com"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label>Interested Project</label
+                  ><select id="project" class="form-select">
+                    <option>Aashray The Courtyards</option>
+                    <option>Aashray Residency</option>
+                    <option>Aashray Greens</option>
+                    <option>Aashray Enclave</option>
+                    <option>Aashray Heights</option>
+                    <option>Aashray Condoville</option>
+                    <option>General Enquiry</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label>Buyer Type</label
+                  ><select class="form-select">
+                    <option>First-time Home Buyer</option>
+                    <option>Family / Upgrader</option>
+                    <option>NRI / Investor</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label>Message</label
+                  ><textarea
+                    id="message"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Tell us about your requirement"
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-gold btn-lg" type="submit">
+                    Send Enquiry <i class="bi bi-arrow-up-right"></i>
+                  </button>
+                  <p id="formStatus" class="small mt-3 mb-0"></p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="dark-section section-pad">
+      <div class="container text-center">
+        <p class="eyebrow gold-text">Aashray ESTATES</p>
+        <h2>Beyond Property,<br />A Sense of Belonging.</h2>
+        <p class="muted-light mx-auto" style="max-width: 650px">
+          Thoughtfully designed spaces built on trust, quality and long-term
+          value.
+        </p>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <img src="logo.png" class="footer-logo" alt="Aashray Estates" />
+            <p class="mt-3">Beyond Property,<br />A Sense of Belonging.</p>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6>Explore</h6>
+            <a href="index.html">Home</a><a href="properties.html">Properties</a
+            ><a href="about.html">About</a><a href="team.html">Team</a
+            ><a href="contact.html">Contact</a>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h6>Focus</h6>
+            <a href="about.html#focus">Development</a
+            ><a href="about.html#focus">Livability</a
+            ><a href="about.html#focus">Trust</a
+            ><a href="about.html#focus">Quality</a>
+          </div>
+          <div class="col-lg-3">
+            <h6>Location</h6>
+            <p>Lucknow, Uttar Pradesh</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © 2026 Aashray Estates. All rights reserved.
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function submitEnquiry(e) {
+        e.preventDefault();
+        const s = document.getElementById("formStatus");
+        s.textContent =
+          "Thank you. Your enquiry has been recorded on this demo form.";
+        s.style.color = "#8b6a22";
+        return false;
+      }
+    </script>
+  </body>
+</html>
